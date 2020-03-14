@@ -9,7 +9,11 @@ prepareCovidData = function (covid_raw)
 
 selectCovidData = function (covid_long, country, date_start, type)
 {
-  tmp = covid_long[covid_long$Country.Region == country,]
+  if (country == "world") {
+    tmp = covid_long
+  } else {
+    tmp = covid_long[covid_long$Country.Region == country,]
+  }
   if (length(unique(covid_long$Country.Region)) > 1) {
     tmp = tmp %>% group_by(date) %>% summarize(Country.Region = Country.Region[1], nbr = sum(nbr))
   }
