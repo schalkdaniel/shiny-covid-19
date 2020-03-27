@@ -38,11 +38,11 @@ server = function(input, output, session) {
 ui = fluidPage(theme = shinythemes::shinytheme("superhero"),
   headerPanel("Coronavirus COVID-19"),
 
-  mainPanel(
+  mainPanel(width = "100%",
     fluidRow(
       plotly::plotlyOutput("covid_globe")
     ),
-    fluidRow(
+    fluidRow(width = "100%",
       column(width = 3,
         selectInput("country", "Country", c("World", as.character(sort(unique(covid_confirmed_raw$Country.Region)))), selected = "Germany"),
       ),

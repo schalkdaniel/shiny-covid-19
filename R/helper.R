@@ -45,7 +45,7 @@ covidGlobe = function (df)
     bgcolor = 'transparent'
   )
 
-  p = plot_geo(df, width = 800, height = 800) %>%
+  p = plot_geo(df) %>%
     add_trace(
       z = ~nbr,
       color = ~nbr,
