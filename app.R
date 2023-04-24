@@ -59,4 +59,4 @@ ui = fluidPage(theme = shinythemes::shinytheme("superhero"),
   )
 )
 
-shinyApp(ui = ui, server = server)
+shinyApp(ui = ui, server = server, options = list(launch.browser = TRUE, port = 8080))
